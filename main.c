@@ -1,5 +1,5 @@
 #include "monty.h"
-globals_t global;
+
 /**
  * main - main function
  * @argc: number of the arguments
@@ -8,10 +8,11 @@ globals_t global;
  */
 int main(int argc, char **argv)
 {
+	globals_t global;
 	stack_t *stack = NULL;
-	size_t b_n = 0;
-	int b_s = 0;
-	unsigned int bc = 1;
+	size_t numbytes = 0;
+	int bytesr = 0;
+	unsigned int con = 1;
 
 	global.flag = 1;
 	global.line = NULL;
@@ -26,9 +27,9 @@ int main(int argc, char **argv)
 		dprintf(2, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while ((b_s = getline(&global.line, &b_n, global.fil)) != EOF)
+	while ((bytesr = getline(&global.line, &numbytes, global.fil)) != EOF)
 	{
-		_delete(global.line);
+		delete_jump(global.line);
 		if (global.line[0] != 35)
 		{
 			global.token = strtok(global.line, " \t\n");
@@ -36,12 +37,12 @@ int main(int argc, char **argv)
 			if (global.opco != NULL)
 			{
 				global.token = strtok(NULL, " \t\n");
-				func(global.opco)(&stack, bc);
+				func(global.opco)(&stack, con);
 			}
-			bc++;
+			con++;
 		}
 	}
-	_list(&stack);
+	free_l(&stack);
 	free(global.line);
 	fclose(global.fil);
 	return (0);
