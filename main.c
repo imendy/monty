@@ -11,7 +11,7 @@ int main(int argc, char **argv)
 	globals_t global;
 	stack_t *stack = NULL;
 	size_t numbytes = 0;
-	char* bytesr = 0;
+	char bytesr = 0;
 	unsigned int con = 1;
 
 	global.flag = 1;
