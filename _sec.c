@@ -9,18 +9,14 @@
 
 void _sec(stack_t **stack, unsigned int dig_line)
 {
-	stack_t *ptop;
-	stack_t *ptop2;
-	int tyms = 0;
-
 	if (*stack && (*stack)->next)
 	{
-		ptop2 = (*stack)->next;
-		tyms = ptop->n * (*stack)->n;
-		ptop = *stack;
+		stack_t *ptop = *stack;
+		stack_t *ptop2 = (*stack)->next;
+		int tyms = ptop->n * ptop2->n;
+
 		*stack = (*stack)->next;
-		if (*stack)
-			(*stack)->prev = NULL;
+		(*stack)->prev = NULL;
 		free(ptop);
 		(*stack)->n = tyms;
 	}

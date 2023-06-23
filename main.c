@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while ((bytesr = fgets(global.line, numbytes, global.fil)) != EOF)
+	while ((bytesr = fgets(global.line, numbytes, global.fil)) != NULL)
 	{
 		_delete(global.line);
 		if (global.line[0] != 35)
