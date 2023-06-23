@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 	}
 	while ((bytesr = getline(&global.line, &numbytes, global.fil)) != EOF)
 	{
-		delete_jump(global.line);
+		_delete(global.line);
 		if (global.line[0] != 35)
 		{
 			global.token = strtok(global.line, " \t\n");
@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 			con++;
 		}
 	}
-	free_l(&stack);
+	_list(&stack);
 	free(global.line);
 	fclose(global.fil);
 	return (0);
