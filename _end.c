@@ -43,7 +43,7 @@ void _end(stack_t **stack, unsigned int dig_line)
 	else
 	{
 		free(global.line), fclose(global.fil);
-		dprintf(2, "L%u: usage: push integer\n", dig_line);
+		fprintf(2, "L%u: usage: push integer\n", dig_line);
 		_list(stack);
 		exit(EXIT_FAILURE);
 	}

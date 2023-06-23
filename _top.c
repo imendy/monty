@@ -14,7 +14,7 @@ void _top(stack_t **stack, unsigned int dig_line)
 		free(global.line);
 		fclose(global.fil);
 		_list(stack);
-		dprintf(2, "L%u: can't pint, stack empty\n", dig_line);
+		fprintf(2, "L%u: can't pint, stack empty\n", dig_line);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", ptop->n);

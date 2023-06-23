@@ -7,7 +7,7 @@
  */
 void _mistake(stack_t **stack, unsigned int bc)
 {
-	dprintf(2, "L%u: unknown instruction %s\n", bc, global.line);
+	fprintf(2, "L%u: unknown instruction %s\n", bc, global.line);
 	free(global.line);
 	fclose(global.fil);
 	_list(stack);

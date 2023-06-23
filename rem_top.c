@@ -12,7 +12,7 @@ void rem_top(stack_t **stack, unsigned int dig_line)
 	ptop = *stack;
 	if (ptop == NULL)
 	{
-		dprintf(2, "L%d: can't pop an empty stack\n", dig_line);
+		fprintf(2, "L%d: can't pop an empty stack\n", dig_line);
 		free(global.line);
 		fclose(global.fil);
 		_list(stack);
