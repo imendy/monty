@@ -10,7 +10,7 @@ void _affirm(stack_t **stack, unsigned int con)
 		global.num = atoi(global.token);
 	else
 	{
-		fprintf(2, "L%u: usage: push integer\n", con);
+		fprintf(stderr, "L%u: usage: push integer\n", con);
 		_list(stack);
 		free(global.line);
 		fclose(global.fil);

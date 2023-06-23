@@ -16,7 +16,7 @@ void _compute(stack_t **stack, unsigned int dig_line)
 	{
 		if ((*stack)->n == 0)
 		{
-			fprintf(2, "L%u: division by zero\n", dig_line);
+			fprintf(stderr, "L%u: division by zero\n", dig_line);
 			free(global.line);
 			fclose(global.fil);
 			_list(stack);
@@ -33,7 +33,7 @@ void _compute(stack_t **stack, unsigned int dig_line)
 	}
 	else
 	{
-		fprintf(2, "L%d: can't mod, stack too short\n", dig_line);
+		fprintf(stderr, "L%d: can't mod, stack too short\n", dig_line);
 		free(global.line);
 		fclose(global.fil);
 		_list(stack);

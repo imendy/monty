@@ -24,7 +24,7 @@ void _replace(stack_t **stack, unsigned int dig_line)
 	}
 	else
 	{
-		fprintf(2, "L%u: can't sub, stack too short\n", dig_line);
+		fprintf(stderr, "L%u: can't sub, stack too short\n", dig_line);
 		free(global.line);
 		fclose(global.fil);
 		_list(stack);
